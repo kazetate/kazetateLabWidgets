@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lab-header component test</title>
+  <script src="./lab-header.js"></script>
+  <style>
+    body { margin: 0; background: #1a1a1a; color: #ccc; font-family: system-ui, sans-serif; }
+    .test-section { padding: 2rem; border-bottom: 1px solid #333; }
+    .test-label { color: #666; font-size: 0.75rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em; }
+  </style>
+</head>
+<body>
+  <div class="test-section">
+    <div class="test-label">current-site="kazetate.com"</div>
+    <lab-header current-site="kazetate.com"></lab-header>
+  </div>
+
+  <div class="test-section">
+    <div class="test-label">current-site="minimixier"</div>
+    <lab-header current-site="minimixier"></lab-header>
+  </div>
+
+  <div class="test-section">
+    <div class="test-label">current-site="hexagram"</div>
+    <lab-header current-site="hexagram"></lab-header>
+  </div>
+
+  <div class="test-section">
+    <div class="test-label">current-site="" (none active)</div>
+    <lab-header current-site=""></lab-header>
+  </div>
+
+  <div class="test-section">
+    <div class="test-label">Dynamic attribute change test</div>
+    <lab-header id="dynamic-header" current-site="kazetate.com"></lab-header>
+    <p style="margin-top:1rem; font-size:0.875rem;">
+      <button onclick="document.getElementById('dynamic-header').setAttribute('current-site','minimixier')" style="margin-right:0.5rem;">→ minimixier</button>
+      <button onclick="document.getElementById('dynamic-header').setAttribute('current-site','hexagram')">→ hexagram</button>
+    </p>
+  </div>
+</body>
+</html>
